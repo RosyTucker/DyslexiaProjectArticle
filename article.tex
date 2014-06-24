@@ -616,7 +616,34 @@ The majority of participants thought that the game did not take too long to play
 The number of questions in the questionnaire was limited, so as not to overwhelm younger participants. It may have been beneficial to have asked for more information, in particular to gain insight into the users opinions of the screening tests. This would help to determine if the screening tasks which show significant differences between the groups are well received by users.
  
 \section{Conclusions}
+
+In summary, this project aimed to create ``A Serious Game For Aiding the Screening of Dyslexia in Children and Young Adults'' in the hope of replacing the current screening tests. The work completed has gone a long way towards achieving this goal, despite the time and resource limitations. 
+
+In depth analysis was performed in Chapter \ref{chap:litreview}, reviewing the breadth of current knowledge surrounding both dyslexia and games. This knowledge was then utilised to create a game design, specifically engineered to include tasks designed to identify differences between those with and without dyslexia. 
+This design was then rapidly realised, through careful planning and adhering to software engineering principles and methodologies, including the use of TDD, extracting requirements from use cases, and examining the important quality attributes associated with the system.
+ 
+The game implementation was then tested, both for usability and validity. The results of this testing were positive, however, due to lack of data cannot be taken to be definitive. Some of the screening tasks, have shown that they may be capable of distinguishing between the the two groups, and have allowed null hypothesis \textbf{NH.1} to be rejected. Usability testing revealed the strengths and weaknesses of the game design and implementation, with users enjoying the game and the theme as a whole, but finding the controls difficult to grasp.
+
+Overall, though no definitive conclusions could be reached about the games effectiveness as a screening test, due to lack of data, the game certainly proved itself to be an enjoyable experience for users and identified the tasks most likely to have predictive power. Hopefully, with further research, the game developed in this project could be a contender to the current dyslexia screening tests, making the experience more enjoyable and accessible for all.
+
 \subsection{Further Work}
+The work completed in this project could be extended in a number of ways, these can be split into three groups: the game platform, the screening tasks, and the data.
+
+\subsubsection{Game Platform and Hardware}
+Currently the game is only designed to run on the Apple iPad and iPad Mini. In order for the game to be as accessible as hoped for, it would need to be ported to other platforms and hardware. Possible targets include the Apple iPhone and Android devices. Porting the game to the iPhone would be reasonably straight forward as the majority of the existing implementation could be reused, although issues may be faced when considering the difference in screen size.
+Porting the game to Android would be a more difficult task and it is recommended that the game support only the latest versions of the operating system, as it would be difficult to handle the fragmentation if lower versions were included.
+
+\subsubsection{Screening Tasks}
+There were a number of screening task ideas included in Chapter \ref{chap:design} which were not included in the game implementation. It may be the case that some of these tasks, or perhaps completely new tasks, would be better at finding differences between the two groups than some of the tasks that have been included. This is worth exploring as model accuracy is important, therefore, anything that could increase this is also important.
+
+In addition, it may also be beneficial to increase the difficulty of the tasks which did not find significant differences between the groups. It may be that they are capable of finding differences but have not been implemented at the correct difficulty level to make those differences apparent. Since participants did not find the game too challenging, it should be possible to do this without negatively impacting the users experience.
+
+\subsubsection{Data}
+There are two ways in which the work conducted in this project could be advanced by collecting additional data. 
+The first is to better test the model, or improve it. Currently the model relies on very little data and is likely to be overfitted. More data is required in order to properly test it and produce definitive results.
+
+Data could also be collected on an ordinal scale, ranking participants given that the severity of their dyslexia is known. This data would be useful as currently even if the model was capable of generalising, it only produces a binary output. Knowing more information about an each individuals place of the dyslexic continuum could help teachers prioritise and help those most in need first.
+
 \bibliography{references}
 \bibliographystyle{IEEEtran}
 \section{Appendix}
