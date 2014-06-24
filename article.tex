@@ -4,6 +4,7 @@
 \usepackage{parskip}
 \usepackage{float}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usetikzlibrary{shapes,arrows}
 
 \newcommand{\inquote}[1]{\textit{``#1''}}
@@ -15,6 +16,18 @@
 							\textit{#1?}
 						\end{center}
 					}
+					
+\newcommand{\tableformat}[4]{
+\begin{table}[h]
+\centering
+  \rowcolors{2}{gray!10} {white}
+\begin{tabular}{#1}
+  \hline
+  \rowcolor[gray]{0.9} #2
+\end{tabular}
+\caption{#3}
+\label{#4}
+\end{table}}
 					
 \begin{document}
 \title{\textbf{A Serious Game for Aiding the Screening of Dyslexia in Children and Young Adults}}
@@ -200,6 +213,7 @@ Based on the work conducted in \cite{sequential}, for this screening task users 
 Visual memory is tested by presenting the user with an elevator floor number they must travel too and asking them to select that number from a set of similar numbers, again the target number and possible matches are not presented at the same time. Research suggested that those with dyslexia struggle to remember of the shapes of words and numbers, this task is designed to utilise that. It is expected that those with dyslexia will perform worse than controls on this task, when considering time taken and number of errors made.
 
 \section{Evaluation}
+\label{sec:evaluation}
 An experiment aiming to test the games effectiveness as a screening test, and its overall usability, has be designed. 
 
 The games purpose, as previously explained, is to screen children and young adults for dyslexia, in order to ascertain whether this is possible a study must be conducted. In this study participants both with and without dyslexia will play the game and performance metrics will be collected and analysed to determine if there are any significant differences between the metrics achieved by the two groups. If differences are found then, in the future, new users could be classified into one of the two groups based on the metrics they attain.
@@ -212,12 +226,395 @@ The null hypothesis for this study is therefore:
 In addition, the usability of the game can be explored as part of the study, in order to determine whether the design and structure of the game meets user expectations. When considering the usability of the game, a questionnaire can be used to gain insight into the users opinion on game aspects such as controls, theme, duration, and difficulty. The results of this questionnaire can be used to help guide future development and alterations to the game design and structure.
 
 \subsection{Method}
+The following sections explain in detail the method of the study, including the design, the participants, the materials, and the experimental procedure. The experiment method is explained in enough detail for others to replicate it. 
+
 \subsubsection{Design}
+The study is designed to determine if dyslexic users of the game can be identified from non-dyslexic users though a series of performance metrics extracted from their game play, including the time taken to complete certain tasks and numbers of errors made. The study therefore has a one way unrelated samples independent variable (IV) design.
+
+Whether or not participants have dyslexia cannot be controlled or manipulated meaning it is not actually an IV, however, it will be treated as such for the purpose of the study, making it a pseudo-IV. There are therefore two groups of participants, those diagnosed with dyslexia and controls, for this reason the experiment is conducted \emph{between subjects} since a participant is either diagnosed with dyslexia or not\cite{cairns2008}. It is recognised that dyslexia is a continuum and there is not merely a binary separation between participants,  however, with such limited time and resources extracting ordinal information from the results is unfeasible.
+
+Due to epistemic uncertainty about the pseudo-IV, including the level to which participants with dyslexia are effected by the learning disorder, a large number of dependent variables were included. There are eleven dependent variables within the experiment, detailed in Table \ref{tab:dependent}, extracted from Table \ref{tab:puzzles} in Chapter \ref{chap:design}, including time taken to complete tasks and the number of errors made.
+
+When considering the environment in which the study is to take place, participants were to complete the study in a typical, quiet, working environment with a desk and chair. This environment was chosen as, if successful, it is hoped that the game will be used by schools, colleges, and universities to quickly screen children and young adults.
+
+\tableformat{p{2cm} p{5cm} p{3.6cm}}
+{Task ID & Name & Dependent Variables \\ \hline
+1 & Working Memory & Time (s), No. Errors \\
+2 & Spatial Orientation & Time Round 1 (s), Time Round 2 (s) \\
+3 & Visual-spatial Discrimination & Time (s), No. Errors \\
+4 & Visual Sequential Memory & Time (s), No. Errors, No. Switch Presses \\
+5 & Visual Memory & Time (s), No. Errors \\}
+{The dependent variables used the game study}{tab:dependent}
+
 \subsubsection{Apparatus and Materials}
+In order to run the study the following apparatus and materials are required:
+\begin{itemize}[noitemsep]
+\item The game, previously created in this project.
+\item An iPad test device with the game installed.
+\item An informed consent form, detailing what is expected from the participants throughout the study.
+\item A questionnaire designed to collect subjective information from the participants about the usability, and accessibility, of the game.
+\end{itemize}
+The iPad used for testing was a 2014 Apple iPad Mini with a 7.9-inch multi-touch screen, players were able to hold the device in their hands or stand it upon a table, depending on how they felt most comfortable. The prototype game incorporated the five tasks shown in Table \ref{tab:dependent} and detailed in Table \ref{tab:puzzles}.
+
+The informed consent form, to be presented to the user before entering into the study, is shown in Appendix \ref{app:consent} and informs the user of what is expected of them throughout their involvement in the study. It does not inform them of the independent and dependent variables within the study to avoid bias, although users could be told this information in a post-study debriefing.
+
+The questionnaire used in this study is shown in Appendix \ref{app:questions} and allows participants to feedback on the usability of the game whilst providing information about themselves, including their gender, age, familiarity with games and touch screen devices.
+
+The questionnaire has two main purposes, the first is to ascertain basic information about the participant to be used when analysing results, and the second to discover the participants feelings about their experience with the game.
+
 \subsubsection{Participants}
+42 participants were recruited for the study, aged from $11$ to $24$, with a mean age of $16.83$ years (SD=$3.07$). $7$ participants were diagnosed with dyslexia, leaving a control group of size $35$. 
+
+Participants were all native English speakers and were either undergraduate students at the University of York, or high school students. University undergraduates were a convenience sample, recruited by the experimenter.
+High school students were selected by the school administrative staff, they were specifically chosen to provide a mix of children diagnosed with dyslexia and those who appear to show no signs. This selection was chosen so as not to corrupt the results by including children who may have undiagnosed dyslexia in the control group.
+
 \subsubsection{Procedure}
+Participants in the study were assessed individually in a typical working environment, either at school or at university. 
+
+Participants were relayed the instructions shown in Appendix \ref{app:instructions}, so as not to make those with dyslexia feel uncomfortable or pressured to read. 
+After being relayed the instructions, participants were informed that the experiment is likely to take up to 15 minutes of their time and is investigating dyslexia and games. 
+
+Participants aged $18$ years and over were asked to sign the consent form, shown in Appendix \ref{app:consent}, ensuring they were happy to continue. Parents and guardians of participants under $18$ consented on their behalf. 
+Consenting participants were then presented with the iPad test device, loaded with the game. Without any assistance from the experimenter participants played the game once, until completion, taking approximately 10 minutes. 
+
+After completing the game participants were asked to fill in the questionnaire shown in Appendix \ref{app:questions} detailing their experience with the game, including how they rate the controls, aesthetics, theme, and difficulty.
+Finally participants were debriefed, with those wishing to know more details about the game and the experiment being informed.
+
 \subsection{Results}
+Results of this study include both the results of the questionnaire, and the results of the main game study, attempting to identify users with dyslexia using their game performance.
+
+\subsection{Game Usability Questionnaire Results} 
+\label{sec:questionResults}
+
+The questionnaire presented to participants after they had played the game, shown in appendix \ref{app:questions}, included two questions designed to gauge the participants exposure to games and touch screen devices, this was done to validate the use of a game and the use of the mobile platform. There were also six questions about the user's experience with the game, these questions were included to validate the design decisions included the game theme and structure. In this section the responses to each of those questions are analysed.
+
+\begin{figure}[h]
+\hspace*{0.2cm}
+\begin{tikzpicture}
+\node[] at (2.2,4) {\textbf{\footnotesize Q3: How Frequently do You Play Games?}};
+  \begin{axis}[
+    ybar,
+bar width=0.83cm,
+width = 7cm,
+height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-0.5},
+    ylabel={\#participants},
+    symbolic x coords={Never,About once a year, About once a month,
+		About once a week, Most days, Every day},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+    every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Never,0) (About once a year,0) 
+		(About once a month,6) (About once a week,8) (Most days,20) (Every day,8)};
+  \end{axis}
+\end{tikzpicture}
+\hspace*{1cm}
+\begin{tikzpicture}
+\node[] at (2.4,4.4) {\textbf{\footnotesize Q4: How Frequently do You Use }};
+\node[] at (2.7,4) {\textbf{\footnotesize Touchscreen Devices?}};
+
+  \begin{axis}[
+    ybar,
+    bar width=0.83cm,
+    width = 7cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-1},
+    ylabel={\#participants},
+    symbolic x coords={Never,About once a year, About once a month,
+		About once a week, Most days, Every day},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Never,0) (About once a year,0) 
+		(About once a month,0) (About once a week,1) (Most days,4) (Every day,37)};
+  \end{axis}
+\end{tikzpicture}
+
+\vspace* {0.3cm}
+%%%%%%%ROW 2 %%%%%%%%%%
+\begin{tikzpicture}
+\node[] at (2.2,4) {\textbf{\footnotesize Q5: The Game Controls were Easy to Use}};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,6) (Agree,19) 
+		(Neutral, 10) (Disagree,7) (Strongly Disagree,0)};
+  \end{axis}
+\end{tikzpicture}
+\hspace*{0.8cm}
+\begin{tikzpicture}
+\node[] at (2.7,4) {\textbf{\footnotesize Q6: I Liked the Game Theme }};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,12) (Agree,22) 
+		(Neutral, 6) (Disagree,2) (Strongly Disagree,0)};
+  \end{axis}
+\end{tikzpicture}
+\caption{Frequency of responses for questionnaire questions Q3-Q6}
+\label{fig:frequency}
+\end{figure}
+
+\begin{description}
+\item[Q3) How Frequently do you Play Games?: ]
+The response for this question, shown in Figure \ref{fig:frequency}, shows that $86\%$ of those asked play games at least once a week, with the majority playing most days. This result is a positive sign, showing that those in the target age group are likely to relate to a screening test in the form of a game, as they already have a lot of interaction with games.
+
+\item[Q4) How Frequently do you Use Touchscreen Devices?:]
+The response for this question, shown in Figure \ref{fig:frequency}, shows that $100\%$ of those asked use touchscreen devices every week, with $88\%$ using them daily. This information confirms that using a touchscreen mobile device was a good choice for the target audience. It also shows that potential users are likely to be familiar with touchscreen concepts, such as the gestures used within the game.
+
+\item[Q5: The Game Controls were Easy to Use]
+Figure \ref{fig:frequency} shows that $60\%$ of those asked agreed or strongly agreed that the controls were easy to use. Though this is the majority, it is not as many as hoped and it is important that the users find the controls easy to use to prevent them from becoming frustrated with the game and losing interest. When asked, the majority of participants who chose neutral or disagree said that they found jumping difficult, it may be worth examining other options for the jump control in later versions of the game.
+
+\item[Q6: I Liked the Game Theme]
+The responses for this question, shown in Figure \ref{fig:frequency} show that $81\%$ of participants agree or strongly agree with this statement, such a high percentage means the game theme is likely to be suitable for the target audience.
+
+\item[Q7: The Game was too Challenging]
+Figure \ref{fig:frequency2} shows that $98\%$ of participants did not agree with this statement and though this is a positive sign, this does not show that the game is the correct difficulty for the target age group, the game must also not be too easy, in order to keep users engaged.
+
+\item[Q8: I Enjoyed Playing the Game]
+Figure \ref{fig:frequency2} shows that $83\%$ of participants  agreed or strongly agreed with this statement, a very positive response. In addition, only a single participant felt the experience was negative. 
+
+\item[Q9: The Game Took too Long to Play]
+Figure \ref{fig:frequency2} shows that $95\%$ of participants did not agree with this statement, a very good response. For this question, it is important that users do not think the game is too long as they need to be engaged in order to get the most accurate results. It is not of concern that many participants felt the game was too short, as the primary goal of the game is to screen for dyslexia as efficiently as possible.
+
+\item[Q10: The Game was too Easy]
+Figure \ref{fig:frequency2} shows that $93\%$ of participants did not feel strongly either way about this statement. The ideal response would be for all participants to feel neutrally about this statement meaning that the game is the correct difficulty. The results for this statement, coupled with the response for Q7, are promising and suggest that the difficultly of the game is inline with what the target audience expect.
+\end{description}
+
+\begin{figure}[h]
+\begin{tikzpicture}
+\node[] at (2.7,4) {\textbf{\footnotesize Q7: The Game was too Challenging}};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-1},
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,0) (Agree,1) 
+		(Neutral, 11) (Disagree,23) (Strongly Disagree,7)};
+  \end{axis}
+\end{tikzpicture}
+\hspace*{1cm}
+\begin{tikzpicture}
+\node[] at (2.7,4) {\textbf{\footnotesize Q8: I Enjoyed Playing the Game }};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-1},
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,13) (Agree,22) 
+		(Neutral, 6) (Disagree,1) (Strongly Disagree,0)};
+  \end{axis}
+\end{tikzpicture}
+\vspace*{0.5cm}
+\begin{tikzpicture}
+\node[] at (2.7,4) {\textbf{\footnotesize Q9: The Game Took too Long to Play}};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-1},
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,0) (Agree,2) 
+		(Neutral, 8) (Disagree,19) (Strongly Disagree,13)};
+  \end{axis}
+\end{tikzpicture}
+\hspace*{1cm}
+\begin{tikzpicture}
+\node[] at (2.7,4) {\textbf{\footnotesize Q10: The Game was too Easy}};
+  \begin{axis}[
+    ybar,
+    bar width=1cm,
+    width = 6.8cm,
+    height = 5.2cm,
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.2)},
+      anchor=north,legend columns=-1},
+    ylabel={\#participants},
+    symbolic x coords={Strongly Agree,Agree,Neutral,
+		Disagree, Strongly Disagree},
+    xtick=data,
+    nodes near coords, 
+	nodes near coords align={vertical},
+    x tick label style={rotate=45,anchor=east},
+        every axis/.append style={font=\small},
+    ]
+    \addplot coordinates {(Strongly Agree,1) (Agree,10) 
+		(Neutral, 13) (Disagree,16) (Strongly Disagree,2)};
+  \end{axis}
+\end{tikzpicture}
+\vspace*{-1cm}
+\caption{Frequency of responses for questionnaire questions Q7-Q10}
+\label{fig:frequency2}
+\end{figure}
+
+\subsection{Identifying Participants with Dyslexia Results}
+\label{sec:dyslexiaResults}
+In this section the results of the game study are presented and analysed, in relation to null hypothesis \textbf{NH.1}, testing whether significant differences between the performance metrics achieved by the two groups exist, and whether it is possible to correctly classify participants into the correct groups. A summary of the results obtained from the study, are presented in Table \ref{tab:studyRaw} and include basic participant information and game play metrics. 
+
+\tableformat{p{4.5cm}| c c c c c}{
+\hline
+\rowcolor{gray!30}  & \multicolumn{2}{ c }{With Dyslexia} & \multicolumn{2}{ c }{Controls} & Mann-Whitney U \\ 
+\rowcolor{gray!30} Game Metric & Mean & SD & Mean & SD & Significance\\ \hline
+
+ %%Game 1
+Time Task 1 & 58.77 & 23.79 & 69.85 & 60.95 & 0.843\\
+Errors Task 1 & 1.57 & 1.90  &  2.11 &4.33 & 0.869 \\
+
+ %%Game 2
+Time Task 2 (Round 1)  & 59.30 & 33.79 & 53.06 & 27.30 & 0.644\\
+Time Task 2 (Round 2)  & 43.01 &  9.78 & 43.04 &  25.59 & 0.574\\
+
+ %%Game 3
+Time Task 3  & 44.55  &  15.64 & 38.93 & 12.51 & 0.353 \\
+Errors Task 3  & 3.00 & 2.58 & 2.69 &  2.93 & 0.668 \\
+
+  %%Game 4
+Time Task 4 & 42.29 & 11.32 & 38.50  & 11.24 & 0.370 \\
+Errors Task 4 & 4.86 & 2.91 & 0.86 & 1.06 & \textbf{$<$0.001}\\
+Switch Presses Task 4 &  6.71 & 2.43 & 8.54 & 4.88 & 0.426 \\
+
+ %%Game 5
+Time Task 5 &  33.54 & 8.87 & 26.73 & 9.48 & \textbf{0.045} \\
+Errors Task 5 & 1.00 & 0.82 &  0.83 & 1.20 & 0.370\\
+}{Summary of the results obtained by the study, all times are given in seconds. }
+{tab:studyRaw}
+
+A \emph{Mann-Whitney U} significance test was performed on each of the game metrics to determine if the observed differences between the results achieved by the two groups are significant. The significance level used was $p=0.05$, such that there is at most a $5\%$ probability that the results are drawn from the same distribution. The results of this significance testing, also shown in Table \ref{tab:studyRaw}, show that two of the eleven performance metrics show significant differences between the two groups: the number of errors made in task 4 and the time taken to complete task 5.
+
+The group with dyslexia made significantly more errors on task 4, the task designed to test visual sequential memory, previous work presented in Chapter \ref{chap:litreview} support this result, suggesting that controls would perform better in this task.
+The group with dyslexia were also significantly slower when completing task 5, the task designed to test visual memory. This was also expected, as the research in Chapter \ref{chap:litreview} suggested that the problem of rotating and reversing letters seen in some individuals with dyslexia, could cause them to perform worse than controls in this task.
+
+Having determined which individual tasks identify significant differences between the two groups, the problem can be approached as one of classification:
+\cquestion{Can a model be built from the game performance metrics which can predict which class an individual belongs to}
+
+When attempting to answer this question, methods such as \emph{Principal Component Analysis} (PCA) and \emph{Linear Discriminant analysis}(LDA) were considered for data preprocessing. 
+PCA reduces dimensionality by identifying a smaller set of variables, which are linear combinations of the original inputs,  which preserve the majority of the variance in the data\cite{PCA}.   
+LDA is similar, however, exploits knowledge of the desired output class for each data record by attempting to model the differences between the classes.  
+However, both PCA and LDA make a lot of assumptions about the data and are unlikely to be suitable for use on such a small dataset. 
+
+Instead, \emph{Logistic Regression} (LR) was used to create a model capable of classifying the data collected in this study, and to reduce overfitting. 
+LR classifies data records by calculating the conditional probability  $P(Y=1|X=x)$, where $Y=1$ is a positive output and in this case means that the participant belongs in the group with dyslexia. $x$ is the dependant variables used as input\cite{LR}, in this case the performance metrics collected during game play. LR allows non-linear relationships between the inputs and the output to be modelled, reducing the inputs to a single probability score, such that individuals what a probability score $\geq0.5$ will be classified in the group with dyslexia. 
+
+
+Using all of the game metrics as inputs to the LR model is likely to seriously overfit to the data, and impede generalisation. Instead, only the variables which identified significant differences between the two groups were used for the model, the number of errors made in task $4$ and the time taken to complete task 5.
+
+An LR model was fitted to the data using the \emph{Binary Logistic Regression Tool} available in the \emph{SPSS Statistics} software. Step 0 of the model, with no inputs included as predictors, achieved $83.3\%$ accuracy by assuming that all participants fell into the control group. One further step was performed, adding the number of errors made in task $4$ to the model as a predictor, no further steps were performed as adding the time taken to complete task $5$ made no significant difference to the model.
+
+The final model equation, shown in equation \ref{eq:model}, can be used as part of equation \ref{eq:predict} to find the probability that an individual with performance metrics $x$ belongs in the group with dyslexia. When classifying, a probability $<0.5$ means the individual belongs in the control group, a probability $\geq 0.5$ means that the individual belongs in the group with dyslexia.
+When examining the data collected in this study, this model achieved an accuracy of $95.2\%$ when attempting to classify participants into one of the two classes. $5$ of the $7$ participants with dyslexia were correctly classified, all other participants were classified as controls.
+
+\begin{equation}
+\small
+\mathrm{logit}(p(x))= -6.921  + 2.140 \cdot E_{4} \label{eq:model}
+\end{equation}
+ \begin{center}
+	\vspace*{-0.1cm}
+	\small
+   where $E_{4}$ is the number of errors made in task 4.
+   \end{center}
+   
+   \begin{equation}
+\small
+p = \frac{\mathrm{e}^{\mathrm{logit}(p(x))}}{1 + \mathrm{e}^{\mathrm{logit}(p(x))}}
+\label{eq:predict}
+\end{equation}
+   
 \subsection{Discussion}
+\label{sec:disscussion}
+In this section the results presented in section \ref{sec:results} are discussed in order to establish their meaning.
+ 
+\subsection{Discussion of the Significance and Logistic Regression Results}
+
+Section \ref{sec:dyslexiaResults}, found that using the \emph{Mann-Whitney U} significance test, significant results were seen for two of the game play metrics, meaning there is at least a $95\%$ confidence that the values achieved by the two groups are drawn from different distributions.
+The \emph{Mann-Whitney U} test was chosen as it is a non-parametric test capable of comparing two independent classes, there was no reason to believe that the data collected in this study had a normal distribution therefore tests such as the \emph{Students T-Test} would have been unsuitable. 
+These results mean that null hypothesis \textbf{NH.1} could be rejected, as there is an observable and indeed significant difference between the results achieved by the two groups, although only in two of the eleven metrics. 
+Though this is a positive sign, it is important to consider that the dataset used for this analysis is very small and that only $7$ of the $42$ participants belonged in the group with dyslexia. This means that it is unlikely that the sample used in this study is truly representative of the actual population, that said, the results provide a good basis for further work and it would be interesting to see if this effect is still observed with a much larger dataset.
+
+
+The results of the \emph{Logistic Regression} analysis showed that a model can be created using equations \ref{eq:model} and \ref{eq:predict} which can achieve $95.2\%$ accuracy, utilising a game play performance metric as a predictor. This again means that null hypothesis \textbf{NH.1} could be rejected, as the model uses a function of the game performance metrics to classify participants.
+This does not ensure that the model will generalise with a high accuracy to new data as it is likely that, due the small size of the dataset, the model has overfitted to the provided data points. To test the model, unseen data should be presented to it and it should be judged on how well it classifies this data. Ideally this would have been done as part of this project, however, the size of the group with dyslexia is already very small and there was not enough data to exclude samples from the model for use in testing.
+
+What the model does show is promise. The model achieved a high level of accuracy and the null hypothesis could be rejected, meaning there is reason to believe that the game is capable of separating the two classes and thus being used a screening test. The only way to determine whether the model will generalise is to collect more data and test it.
+ 
+It is worth noting that it was very difficult to find participants with dyslexia within the timeframe of the project and that, despite every effort being made including involving schools in the study, only $7$ participants were found that had been diagnosed with dyslexia, making it difficult to come to any definitive conclusions about the capabilities of the game. 
+ 
+\subsection{Discussion of the Questionnaire Results}
+The questionnaire results, presented in section \ref{sec:questionResults}, were generally positive, suggesting that the decision to embark on this research was justified, with nearly all participants using games regularly and enjoying the produced game. Results also suggest that, on the most part, the decisions made concerning the games structure, theme, and content were correct. 
+When considering the controls of the game the questionnaire found that some players struggled with the jump control. Though this may not seem important as it is not part of a dyslexia screening task, users struggling to navigate the platform game could result in them having an overall negative experience with the game and perhaps not even finishing it. It is therefore important that the difficulties with the jump control are addressed. To ensure issues with the game controls did not bias the results, effecting one group significantly, the answers to this question were tested for significance. No significant difference between the answers given by those with dyslexia and controls was identified, with a significance score of $0.620$. 
+
+The majority of participants thought that the game did not take too long to play, suggesting that it might even be too short. This is not a concern at this time as the priority at this stage is to refine the predictive power of the game. However, the game ending prematurely may leave some users feeling dissatisfied with the experience and have a negative effect on public opinion. It may therefore be worth examining the duration of the game, or perhaps creating a more interesting and fulfilling ending, in later versions.
+
+The number of questions in the questionnaire was limited, so as not to overwhelm younger participants. It may have been beneficial to have asked for more information, in particular to gain insight into the users opinions of the screening tests. This would help to determine if the screening tasks which show significant differences between the groups are well received by users.
+ 
 \section{Conclusions}
 \subsection{Further Work}
 \bibliography{references}
